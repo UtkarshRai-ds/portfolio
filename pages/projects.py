@@ -57,7 +57,7 @@ PUBLICATIONS = [
         "type": "Conference Paper",
         "date": "November 2022",
         "topic": "MetaVerse: The New Shape of Marketing",
-        "venue": "International Marketing Conference · IIM Shillong",
+        "venue": "International Marketing Conference · IIM Shillong · ISBN: 978-93-5701-583-7",
     },
     {
         "type": "Book Chapter",
