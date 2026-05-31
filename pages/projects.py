@@ -50,26 +50,6 @@ PROJECTS = [
         "github_url": "https://github.com/utkarsh26rai/skywatch-detection",
         "highlight": "Dual-model benchmark: YOLOv8n vs YOLOv8s with explicit failure mode analysis",
     },
-    {
-        "title": "Computer Vision Research — DIOR Dataset",
-        "status": "research",
-        "period": "2023",
-        "description": (
-            "Academic research on aerial object detection using the DIOR dataset (20 classes, remote sensing imagery). "
-            "Implemented and benchmarked ResNet50 and YOLOv8 architectures, analysing performance across "
-            "diverse geospatial object categories. Work contributed to a published conference paper and book chapter."
-        ),
-        "tags": ["YOLOv8", "ResNet50", "PyTorch", "DIOR dataset", "OpenCV"],
-        "tag_type": "orange",
-        "metrics": [
-            ("Classes", "20"),
-            ("Models", "2"),
-            ("Output", "Paper"),
-        ],
-        "live_url": None,
-        "github_url": None,
-        "highlight": "Published conference paper & book chapter on remote sensing detection",
-    },
 ]
 
 PUBLICATIONS = [
