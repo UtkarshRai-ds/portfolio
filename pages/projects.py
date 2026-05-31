@@ -70,42 +70,20 @@ PROJECTS = [
         "github_url": None,
         "highlight": "Published conference paper & book chapter on remote sensing detection",
     },
+]
+
+PUBLICATIONS = [
     {
-        "title": "SQL ETL Pipeline & Data Quality Framework",
-        "status": "internship",
-        "period": "2023 · APEX Byte",
-        "description": (
-            "Designed and implemented SQL-based ETL pipelines with automated data quality checks using pandas. "
-            "Built 5 validation layers covering nulls, type consistency, range checks, referential integrity, "
-            "and duplicate detection. Reduced manual QA time significantly."
-        ),
-        "tags": ["SQL", "pandas", "ETL", "Data Quality", "Python"],
-        "tag_type": "green",
-        "metrics": [
-            ("QA Checks", "5"),
-            ("Tool", "pandas"),
-        ],
-        "live_url": None,
-        "github_url": None,
-        "highlight": "Automated data quality validation pipeline",
+        "type": "Conference Paper",
+        "date": "November 2022",
+        "topic": "MetaVerse: The New Shape of Marketing",
+        "venue": "International Marketing Conference · IIM Shillong",
     },
     {
-        "title": "EDA & Business Intelligence Dashboard",
-        "status": "internship",
-        "period": "2023 · Goodspace",
-        "description": (
-            "Performed exploratory data analysis with Python and built interactive Power BI dashboards using DAX. "
-            "Delivered actionable business insights to stakeholders through clear visualisations and executive summaries."
-        ),
-        "tags": ["Python", "Power BI", "DAX", "EDA", "matplotlib", "seaborn"],
-        "tag_type": "green",
-        "metrics": [
-            ("Tool", "Power BI"),
-            ("Language", "DAX"),
-        ],
-        "live_url": None,
-        "github_url": None,
-        "highlight": "Stakeholder-facing BI dashboards with DAX",
+        "type": "Book Chapter",
+        "date": "February 2021",
+        "topic": "PHARMEASY: A Fast Growing Healthtech Venture",
+        "venue": "Emerging Contours of Business and Management · ISBN: 978-93-91842-41-3",
     },
 ]
 
@@ -114,14 +92,11 @@ STATUS_BADGE = {
              'border-radius:12px;padding:2px 10px;font-size:11px;font-family:\'Space Mono\',monospace;">● LIVE</span>'),
     "research": ('<span style="background:#2d1f0e;color:#ffa657;border:1px solid #9e6a03;'
                  'border-radius:12px;padding:2px 10px;font-size:11px;font-family:\'Space Mono\',monospace;">◆ RESEARCH</span>'),
-    "internship": ('<span style="background:#1f2d3d;color:#79c0ff;border:1px solid #1f6feb;'
-                   'border-radius:12px;padding:2px 10px;font-size:11px;font-family:\'Space Mono\',monospace;">▸ INTERNSHIP</span>'),
 }
 
 TAG_STYLE = {
     "blue": "background:#1f2d3d;color:#79c0ff;border:1px solid #1f6feb;",
     "orange": "background:#2d1f0e;color:#ffa657;border:1px solid #9e6a03;",
-    "green": "background:#0d2d1f;color:#3fb950;border:1px solid #238636;",
 }
 
 
@@ -130,7 +105,7 @@ def render():
     st.markdown("# Projects")
     st.markdown(
         '<p style="font-size:15px;color:#8b949e;margin-top:-8px;margin-bottom:24px;">'
-        "End-to-end ML systems, computer vision research, and data engineering work.</p>",
+        "End-to-end ML systems and computer vision research.</p>",
         unsafe_allow_html=True,
     )
 
@@ -141,14 +116,12 @@ def render():
             f'padding:2px 10px;font-size:12px;margin:2px;font-family:\'Space Mono\',monospace;">{t}</span>'
             for t in proj["tags"]
         )
-
         metrics_html = "".join(
             f'<div style="text-align:center;padding:10px 16px;background:#0d1117;border-radius:6px;border:1px solid #21262d;">'
             f'<div style="font-family:\'Space Mono\',monospace;font-size:18px;color:#58a6ff;font-weight:700;">{v}</div>'
             f'<div style="font-size:11px;color:#8b949e;margin-top:2px;">{k}</div></div>'
             for k, v in proj["metrics"]
         )
-
         links_html = ""
         if proj.get("live_url"):
             links_html += (
@@ -162,23 +135,38 @@ def render():
                 f'style="color:#58a6ff;font-size:13px;text-decoration:none;'
                 f'font-family:\'Space Mono\',monospace;">⌥ GitHub</a>'
             )
+        st.markdown(
+            f'<div class="card" style="margin-bottom:20px;">'
+            f'<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap;">'
+            f'{STATUS_BADGE[proj["status"]]}'
+            f'<span style="font-size:12px;color:#8b949e;">{proj["period"]}</span>'
+            f'</div>'
+            f'<div style="font-family:\'Space Mono\',monospace;font-size:18px;color:#f0f6fc;font-weight:700;margin-bottom:10px;">{proj["title"]}</div>'
+            f'<div style="background:#161b22;border-left:3px solid #388bfd;padding:10px 14px;border-radius:0 6px 6px 0;'
+            f'font-size:13px;color:#79c0ff;font-family:\'Space Mono\',monospace;margin-bottom:14px;">✦ {proj["highlight"]}</div>'
+            f'<p style="font-size:14px;color:#8b949e;line-height:1.7;margin-bottom:14px;">{proj["description"]}</p>'
+            f'<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;">{metrics_html}</div>'
+            f'<div style="margin-bottom:14px;">{tags_html}</div>'
+            f'<div>{links_html}</div>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
 
-        st.markdown(f"""
-        <div class="card" style="margin-bottom:20px;">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap;">
-                {STATUS_BADGE[proj["status"]]}
-                <span style="font-size:12px;color:#8b949e;">{proj["period"]}</span>
-            </div>
-            <div style="font-family:'Space Mono',monospace;font-size:18px;color:#f0f6fc;font-weight:700;margin-bottom:10px;">
-                {proj["title"]}
-            </div>
-            <div style="background:#161b22;border-left:3px solid #388bfd;padding:10px 14px;border-radius:0 6px 6px 0;
-                        font-size:13px;color:#79c0ff;font-family:'Space Mono',monospace;margin-bottom:14px;">
-                ✦ {proj["highlight"]}
-            </div>
-            <p style="font-size:14px;color:#8b949e;line-height:1.7;margin-bottom:14px;">{proj["description"]}</p>
-            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;">{metrics_html}</div>
-            <div style="margin-bottom:14px;">{tags_html}</div>
-            <div>{links_html}</div>
-        </div>
-        """, unsafe_allow_html=True)
+    st.markdown('<hr class="divider">', unsafe_allow_html=True)
+    st.markdown('<div class="section-label">// publications</div>', unsafe_allow_html=True)
+
+    for pub in PUBLICATIONS:
+        st.markdown(
+            f'<div class="card" style="margin-bottom:12px;">'
+            f'<div style="display:flex;align-items:flex-start;gap:14px;">'
+            f'<span style="font-size:22px;">📄</span>'
+            f'<div>'
+            f'<div style="font-size:11px;color:#388bfd;font-family:\'Space Mono\',monospace;'
+            f'text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">{pub["type"]} · {pub["date"]}</div>'
+            f'<div style="font-family:\'Space Mono\',monospace;font-size:14px;color:#f0f6fc;font-weight:700;margin-bottom:4px;">{pub["topic"]}</div>'
+            f'<div style="font-size:12px;color:#8b949e;">{pub["venue"]}</div>'
+            f'</div>'
+            f'</div>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )

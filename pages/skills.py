@@ -42,39 +42,58 @@ SKILL_GROUPS = [
             ("Python", 92),
             ("SQL", 85),
             ("Git / GitHub", 88),
-            ("German (A2 → B2)", 30),
+            ("German (B1 level)", 45),
         ],
     },
 ]
 
 TECH_BADGES = [
     "Python", "SQL", "scikit-learn", "pandas", "NumPy", "MLflow", "Optuna",
-    "Streamlit", "Docker", "GitHub Actions", "Power BI", "DAX",
-    "PyTorch", "Ultralytics YOLOv8", "ResNet50", "pytest", "ruff", "Git",
-    "AWS Cloud", "matplotlib", "seaborn", "Jupyter",
+    "Streamlit", "Docker", "GitHub Actions", "Power BI", "DAX", "Tableau",
+    "PyTorch", "TensorFlow", "Keras", "Ultralytics YOLOv8", "ResNet50",
+    "pytest", "ruff", "Git", "matplotlib", "seaborn", "Jupyter",
     "Weights & Biases", "HuggingFace Spaces", "OpenCV", "Plotly",
 ]
 
 CERTS = [
-    ("AWS Cloud Practitioner", "Amazon Web Services", "2023"),
-    ("MSc Data Analytics", "Berlin School of Business and Innovation", "2024"),
-    ("MBA — Business Analytics & Marketing", "Dual Specialisation", "2023"),
+    ("Generative AI for Data Scientists", "2024"),
+    ("AWS Cloud Practitioner", "2023"),
+    ("Introduction to Statistics", "Stanford · Coursera · 2023"),
+    ("Power BI for Business Intelligence", "Microsoft · Coursera · 2023"),
+    ("Data Science Professional Certificate", "IBM · Coursera · 2023"),
+]
+
+PUBLICATIONS = [
+    {
+        "type": "Conference Paper",
+        "title": "Presented at International Marketing Conference",
+        "venue": "Indian Institute of Management Shillong",
+        "topic": "MetaVerse: The New Shape of Marketing",
+        "date": "November 2022",
+    },
+    {
+        "type": "Book Chapter",
+        "title": "Published in 'Emerging Contours of Business and Management'",
+        "venue": "ISBN: 978-93-91842-41-3",
+        "topic": "PHARMEASY: A Fast Growing Healthtech Venture",
+        "date": "February 2021",
+    },
 ]
 
 
 def skill_bar(name, level):
     color = "#388bfd" if level >= 80 else "#1f6feb" if level >= 60 else "#8b949e"
-    return f"""
-    <div style="margin-bottom:14px;">
-        <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
-            <span style="font-size:13px;color:#c9d1d9;">{name}</span>
-            <span style="font-size:12px;font-family:'Space Mono',monospace;color:#8b949e;">{level}%</span>
-        </div>
-        <div class="skill-bar-bg">
-            <div class="skill-bar-fill" style="width:{level}%;background:{color};"></div>
-        </div>
-    </div>
-    """
+    return (
+        f'<div style="margin-bottom:14px;">'
+        f'<div style="display:flex;justify-content:space-between;margin-bottom:5px;">'
+        f'<span style="font-size:13px;color:#c9d1d9;">{name}</span>'
+        f'<span style="font-size:12px;font-family:\'Space Mono\',monospace;color:#8b949e;">{level}%</span>'
+        f'</div>'
+        f'<div style="background:#21262d;border-radius:4px;height:6px;">'
+        f'<div style="width:{level}%;height:6px;border-radius:4px;background:{color};"></div>'
+        f'</div>'
+        f'</div>'
+    )
 
 
 def render():
@@ -91,14 +110,15 @@ def render():
     for i, group in enumerate(SKILL_GROUPS):
         with cols[i % 2]:
             bars_html = "".join(skill_bar(s, l) for s, l in group["skills"])
-            st.markdown(f"""
-            <div class="card" style="margin-bottom:20px;">
-                <div style="font-size:20px;margin-bottom:6px;">{group["icon"]}</div>
-                <div style="font-family:'Space Mono',monospace;font-size:14px;color:#f0f6fc;
-                            font-weight:700;margin-bottom:16px;">{group["category"]}</div>
-                {bars_html}
-            </div>
-            """, unsafe_allow_html=True)
+            card_html = (
+                f'<div class="card" style="margin-bottom:20px;">'
+                f'<div style="font-size:20px;margin-bottom:6px;">{group["icon"]}</div>'
+                f'<div style="font-family:\'Space Mono\',monospace;font-size:14px;color:#f0f6fc;'
+                f'font-weight:700;margin-bottom:16px;">{group["category"]}</div>'
+                f'{bars_html}'
+                f'</div>'
+            )
+            st.markdown(card_html, unsafe_allow_html=True)
 
     st.markdown('<hr class="divider">', unsafe_allow_html=True)
     st.markdown('<div class="section-label">// full tech radar</div>', unsafe_allow_html=True)
@@ -112,37 +132,38 @@ def render():
     st.markdown(f'<div style="margin-bottom:28px;">{badges_html}</div>', unsafe_allow_html=True)
 
     st.markdown('<hr class="divider">', unsafe_allow_html=True)
-    st.markdown('<div class="section-label">// certifications & credentials</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-label">// certifications</div>', unsafe_allow_html=True)
 
-    cert_cols = st.columns(3)
-    for col, (cert, org, year) in zip(cert_cols, CERTS):
-        with col:
-            st.markdown(f"""
-            <div class="card" style="min-height:110px;">
-                <div style="font-size:22px;margin-bottom:8px;">🏅</div>
-                <div style="font-family:'Space Mono',monospace;font-size:13px;color:#f0f6fc;
-                            font-weight:700;margin-bottom:6px;">{cert}</div>
-                <div style="font-size:12px;color:#8b949e;">{org}</div>
-                <div style="font-size:11px;color:#58a6ff;margin-top:4px;
-                            font-family:'Space Mono',monospace;">{year}</div>
-            </div>
-            """, unsafe_allow_html=True)
+    for cert, year in CERTS:
+        st.markdown(
+            f'<div class="card" style="margin-bottom:10px;padding:14px 20px;display:flex;'
+            f'justify-content:space-between;align-items:center;">'
+            f'<div style="display:flex;align-items:center;gap:12px;">'
+            f'<span style="font-size:18px;">🏅</span>'
+            f'<div style="font-family:\'Space Mono\',monospace;font-size:13px;color:#f0f6fc;">{cert}</div>'
+            f'</div>'
+            f'<div style="font-size:11px;color:#58a6ff;font-family:\'Space Mono\',monospace;white-space:nowrap;">{year}</div>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
 
     st.markdown('<hr class="divider">', unsafe_allow_html=True)
     st.markdown('<div class="section-label">// research & publications</div>', unsafe_allow_html=True)
-    st.markdown("""
-    <div class="card">
-        <div style="display:flex;align-items:flex-start;gap:14px;">
-            <div style="font-size:24px;">📄</div>
-            <div>
-                <div style="font-family:'Space Mono',monospace;font-size:14px;color:#f0f6fc;
-                            font-weight:700;margin-bottom:6px;">Published Academic Work</div>
-                <div style="font-size:13px;color:#8b949e;line-height:1.7;">
-                    Book chapter and conference paper on computer vision and object detection 
-                    (ResNet50, YOLOv8 on DIOR dataset). Contributes to reproducible ML research 
-                    in remote sensing applications.
-                </div>
-            </div>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+
+    for pub in PUBLICATIONS:
+        st.markdown(
+            f'<div class="card" style="margin-bottom:12px;">'
+            f'<div style="display:flex;align-items:flex-start;gap:14px;">'
+            f'<span style="font-size:22px;">📄</span>'
+            f'<div>'
+            f'<div style="font-size:11px;color:#388bfd;font-family:\'Space Mono\',monospace;'
+            f'text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">{pub["type"]} · {pub["date"]}</div>'
+            f'<div style="font-family:\'Space Mono\',monospace;font-size:13px;color:#f0f6fc;'
+            f'font-weight:700;margin-bottom:4px;">{pub["topic"]}</div>'
+            f'<div style="font-size:13px;color:#8b949e;margin-bottom:2px;">{pub["title"]}</div>'
+            f'<div style="font-size:12px;color:#58a6ff;">{pub["venue"]}</div>'
+            f'</div>'
+            f'</div>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
