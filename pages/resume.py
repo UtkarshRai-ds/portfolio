@@ -31,25 +31,38 @@ def render():
 
     experiences = [
         {
-            "role": "Data Science Intern",
-            "company": "APEX Byte",
-            "period": "2023",
-            "location": "Remote",
+            "role": "Data Science Freelancer",
+            "company": "Self Employed",
+            "period": "Sep 2024 – Oct 2025",
+            "location": "Berlin, Germany",
             "bullets": [
-                "Designed and implemented SQL-based ETL pipelines for structured data ingestion and transformation.",
-                "Built automated data quality framework with 5 validation checks (nulls, types, ranges, duplicates, referential integrity) using pandas.",
-                "Reduced manual QA overhead through scripted validation layers, improving pipeline reliability.",
+                "Loaded, preprocessed, and augmented image datasets using TensorFlow (Sequential API); designed and trained CNN-based classifiers achieving high accuracy on client-specific use cases.",
+                "Fine-tuned ML models (scikit-learn, Keras, TensorFlow) through hyperparameter optimisation and feature engineering, increasing predictive performance by up to 20%.",
+                "Engineered end-to-end ETL pipelines for ingesting, cleaning, and transforming structured and unstructured data; monitored pipeline performance for reliability and efficiency.",
+                "Created SQL-based ETL workflows, reducing data processing and load times by 30% while boosting reporting reliability.",
+                "Extracted and parsed local data from PDFs and spreadsheets with Python, automating contact-list ingestion scripts.",
             ],
         },
         {
-            "role": "Data Analyst Intern",
-            "company": "Goodspace",
-            "period": "2023",
-            "location": "Remote",
+            "role": "Data Analytics Intern",
+            "company": "APEX Byte",
+            "period": "Jun 2024 – Oct 2024",
+            "location": "Noida, India (Remote)",
             "bullets": [
-                "Performed comprehensive EDA on business datasets using Python (pandas, matplotlib, seaborn).",
-                "Built interactive Power BI dashboards with DAX measures for stakeholder reporting.",
-                "Delivered executive summaries translating complex data patterns into actionable business recommendations.",
+                "Implemented data-quality checks (missing values, duplicates, outliers) using pandas and stored procedures, achieving >99% data integrity for downstream analytics.",
+                "Wrote and optimised complex SQL queries and indexed key tables, cutting average query runtime by 27% and accelerating insights delivery.",
+                "Partnered with product and marketing teams to translate business requirements into data models and KPIs, enabling data-driven decision-making across the organisation.",
+            ],
+        },
+        {
+            "role": "Business Analytics Intern",
+            "company": "Goodspace Technologies Pvt. Ltd.",
+            "period": "Jul 2022 – Sep 2022",
+            "location": "Delhi, India",
+            "bullets": [
+                "Developed and validated linear and logistic regression models to predict user churn, improving retention strategies by 15%.",
+                "Performed data mining and exploratory analysis on 100k+ user events using Python (pandas, NumPy), increasing conversion rate by 12%.",
+                "Modelled datasets using Power BI and DAX, improving data accuracy by 30%.",
             ],
         },
     ]
@@ -82,16 +95,16 @@ def render():
         {
             "degree": "MSc Data Analytics",
             "institution": "Berlin School of Business and Innovation",
-            "period": "2023 – 2024",
+            "period": "2023 – 2025",
             "location": "Berlin, Germany",
-            "detail": "Focus: Machine Learning, Statistical Modelling, Data Engineering",
+            "detail": "Machine Learning · Statistical Modelling · Data Engineering · Production Deployment",
         },
         {
-            "degree": "MBA — Business Analytics & Marketing (Dual)",
-            "institution": "Sharda University, Greater Noida",
-            "period": "2021 – 2023",
-            "location": "India",
-            "detail": "Dual specialisation in data-driven strategy and marketing analytics",
+            "degree": "BBA + MBA — Business Analytics & Marketing (Integrated)",
+            "institution": "Sharda University",
+            "period": "2019 – 2023",
+            "location": "Greater Noida, India",
+            "detail": "Marketing Strategy · Operations Research · Business Intelligence · Consumer Analytics",
         },
     ]
 
@@ -117,9 +130,9 @@ def render():
 
     competency_cols = st.columns(3)
     competencies = [
-        ("ML & Modelling", ["scikit-learn", "Optuna", "MLflow", "YOLOv8", "ResNet50"]),
+        ("ML & Modelling", ["scikit-learn", "Optuna", "MLflow", "YOLOv8", "TensorFlow", "Keras"]),
         ("Data Engineering", ["SQL", "ETL Pipelines", "Docker", "GitHub Actions", "pytest"]),
-        ("Analytics & BI", ["Power BI", "DAX", "Streamlit", "pandas", "EDA"]),
+        ("Analytics & BI", ["Power BI", "DAX", "Streamlit", "pandas", "EDA", "Tableau"]),
     ]
     for col, (title, items) in zip(competency_cols, competencies):
         with col:
