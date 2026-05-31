@@ -5,7 +5,7 @@ def render():
     st.markdown('<div class="section-label">// who am i</div>', unsafe_allow_html=True)
     st.markdown("# Utkarsh Rai")
     st.markdown(
-        '<p style="font-size:20px; color:#8b949e; margin-top:-10px;">Data Scientist & Business Analyst · Berlin, Germany 🇩🇪</p>',
+        '<p style="font-size:20px; color:#8b949e; margin-top:-10px;">Data Scientist · Berlin, Germany 🇩🇪</p>',
         unsafe_allow_html=True,
     )
 
@@ -15,23 +15,23 @@ def render():
         st.markdown("""
         <div class="card">
         <p style="font-size:15px; color:#c9d1d9; line-height:1.9;">
-        I sit at the intersection of <span class="highlight-text">data science and business strategy</span> — 
-        a combination that's rarer than it sounds. With an 
+        <span class="highlight-text">Data Science</span> and <span class="highlight-text">Business Strategy</span> 
+        are often treated as separate worlds. My background brings them together. With an 
         <span class="highlight-text">MSc in Data Analytics</span> (Berlin School of Business and Innovation) 
         and a <span class="highlight-text">BBA + MBA in Business Analytics & Marketing</span> (Sharda University), 
-        I bring both the technical depth to build ML systems and the business fluency to know 
+        I have both the technical depth to build ML systems and the business fluency to know 
         <em>why</em> they matter.
         </p>
         <p style="font-size:15px; color:#c9d1d9; line-height:1.9; margin-top:14px;">
         My work spans the full stack of data-driven decision-making: designing predictive models, 
         engineering production pipelines, building BI dashboards, and translating complex outputs 
         into decisions that stakeholders can act on. I'm drawn to problems where the real challenge 
-        isn't just the model — it's understanding the business well enough to ask the right question.
+        isn't just the model; it's understanding the business well enough to ask the right question.
         </p>
         <p style="font-size:15px; color:#c9d1d9; line-height:1.9; margin-top:14px;">
-        I'm fluent across the analytics spectrum — 
+        I'm fluent across the analytics spectrum: 
         <span class="highlight-text">time series forecasting, customer segmentation, operations research, 
-        marketing analytics, A/B testing, and computer vision</span> — and comfortable bridging 
+        marketing analytics, A/B testing, and computer vision</span>, and comfortable bridging 
         the gap between a Jupyter notebook and a boardroom recommendation. I'm also curious about 
         <span class="highlight-text">AI product roles</span> where technical literacy and business 
         judgment converge.
@@ -87,10 +87,10 @@ def render():
     with col2:
         st.markdown('<div class="section-label">// quick stats</div>', unsafe_allow_html=True)
         stats = [
-            ("3+", "Years Experience"),
+            ("2+", "Years Experience"),
             ("5+", "Projects Shipped"),
             ("2", "Research Publications"),
-            ("2", "Degrees"),
+            
         ]
         for val, label in stats:
             st.markdown(f"""
@@ -106,7 +106,7 @@ def render():
             <div style="font-size:13px; color:#c9d1d9; line-height:1.9;">
                 <div style="margin-bottom:8px;">🔍 Open to DS, DA, BA & Consultant roles in Germany</div>
                 <div style="margin-bottom:8px;">🤖 Curious about AI Product Management</div>
-                <div style="margin-bottom:8px;">🇩🇪 Learning German (A2 → B2)</div>
+                <div style="margin-bottom:8px;">🇩🇪 Learning German (B1 level)</div>
                 <div>📝 Building in public on LinkedIn</div>
             </div>
         </div>
