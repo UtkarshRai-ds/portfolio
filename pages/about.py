@@ -1,13 +1,45 @@
 import streamlit as st
+import os
+from PIL import Image
 
 
 def render():
     st.markdown('<div class="section-label">// who am i</div>', unsafe_allow_html=True)
-    st.markdown("# Utkarsh Rai")
-    st.markdown(
-        '<p style="font-size:20px; color:#8b949e; margin-top:-10px;">Data Scientist · Berlin, Germany 🇩🇪</p>',
-        unsafe_allow_html=True,
-    )
+
+    # Profile card with photo
+    photo_path = os.path.join(os.path.dirname(__file__), "..", "assets", "photo.jpg")
+    if not os.path.exists(photo_path):
+        photo_path = os.path.join(os.path.dirname(__file__), "..", "assets", "photo.png")
+
+    if os.path.exists(photo_path):
+        img = Image.open(photo_path)
+        hdr_col1, hdr_col2 = st.columns([1, 4])
+        with hdr_col1:
+            st.image(img, use_container_width=True, output_format="JPEG")
+        with hdr_col2:
+            st.markdown("# Utkarsh Rai")
+            st.markdown(
+                '<p style="font-size:20px; color:#8b949e; margin-top:-10px;">Data Scientist · Berlin, Germany 🇩🇪</p>',
+                unsafe_allow_html=True,
+            )
+            st.markdown(
+                '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;">'
+                '<a href="https://www.linkedin.com/in/utkarshrai-ds" target="_blank" '
+                'style="color:#58a6ff;font-size:13px;text-decoration:none;font-family:\'Space Mono\',monospace;">💼 LinkedIn</a>'
+                '<span style="color:#21262d;">|</span>'
+                '<a href="https://github.com/UtkarshRai-ds" target="_blank" '
+                'style="color:#58a6ff;font-size:13px;text-decoration:none;font-family:\'Space Mono\',monospace;">🐙 GitHub</a>'
+                '<span style="color:#21262d;">|</span>'
+                '<span style="color:#8b949e;font-size:13px;font-family:\'Space Mono\',monospace;">📧 utkarsh26rai@gmail.com</span>'
+                '</div>',
+                unsafe_allow_html=True,
+            )
+    else:
+        st.markdown("# Utkarsh Rai")
+        st.markdown(
+            '<p style="font-size:20px; color:#8b949e; margin-top:-10px;">Data Scientist · Berlin, Germany 🇩🇪</p>',
+            unsafe_allow_html=True,
+        )
 
     col1, col2 = st.columns([2, 1])
 
