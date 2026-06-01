@@ -203,14 +203,34 @@ footer {visibility: hidden;}
 
 # Sidebar
 with st.sidebar:
-    st.markdown("""
-    <div style="text-align:center; padding: 20px 0 10px;">
-        <div style="width:72px; height:72px; background:#1f6feb; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 12px; font-family:'Space Mono',monospace; font-size:22px; font-weight:700; color:#f0f6fc;">UR</div>
-        <div style="font-family:'Space Mono',monospace; font-size:16px; color:#f0f6fc; font-weight:700;">Utkarsh Rai</div>
-        <div style="font-size:13px; color:#8b949e; margin-top:4px;">Data Scientist · Berlin</div>
-    </div>
-    <hr style="border:none; border-top:1px solid #21262d; margin:12px 0;">
-    """, unsafe_allow_html=True)
+    # Photo
+    import os
+    from PIL import Image
+    photo_path = os.path.join(os.path.dirname(__file__), "assets", "photo.jpg")
+    if not os.path.exists(photo_path):
+        photo_path = os.path.join(os.path.dirname(__file__), "assets", "photo.png")
+    if os.path.exists(photo_path):
+        img = Image.open(photo_path)
+        st.markdown('<div style="text-align:center; padding: 20px 0 0;">', unsafe_allow_html=True)
+        col1, col2, col3 = st.columns([1, 2, 1])
+        with col2:
+            st.image(img, use_container_width=True, output_format="JPEG")
+        st.markdown("""
+        <div style="text-align:center; padding: 8px 0 10px;">
+            <div style="font-family:'Space Mono',monospace; font-size:16px; color:#f0f6fc; font-weight:700;">Utkarsh Rai</div>
+            <div style="font-size:13px; color:#8b949e; margin-top:4px;">Data Scientist · Berlin</div>
+        </div>
+        <hr style="border:none; border-top:1px solid #21262d; margin:12px 0;">
+        """, unsafe_allow_html=True)
+    else:
+        st.markdown("""
+        <div style="text-align:center; padding: 20px 0 10px;">
+            <div style="width:72px; height:72px; background:#1f6feb; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 12px; font-family:'Space Mono',monospace; font-size:22px; font-weight:700; color:#f0f6fc;">UR</div>
+            <div style="font-family:'Space Mono',monospace; font-size:16px; color:#f0f6fc; font-weight:700;">Utkarsh Rai</div>
+            <div style="font-size:13px; color:#8b949e; margin-top:4px;">Data Scientist · Berlin</div>
+        </div>
+        <hr style="border:none; border-top:1px solid #21262d; margin:12px 0;">
+        """, unsafe_allow_html=True)
 
     page = st.radio(
         "Navigate",
