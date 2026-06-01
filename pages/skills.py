@@ -38,7 +38,8 @@ TECH_RADAR = [
 ]
 
 CERTS = [
-    ("Generative AI for Data Scientists", "2024"),
+    ("Generative AI for Data Scientists", "IBM · Coursera · 2024"),
+    ("Excel Skills for Business Specialization", "Macquarie University · Coursera · 2020"),
     ("Introduction to Statistics", "Stanford · Coursera · 2023"),
     ("Power BI for Business Intelligence", "Microsoft · Coursera · 2023"),
     ("Data Science Professional Certificate", "IBM · Coursera · 2023"),
