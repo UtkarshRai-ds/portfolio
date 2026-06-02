@@ -66,7 +66,7 @@ def render():
         marketing analytics, A/B testing, and computer vision</span>, and comfortable bridging 
         the gap between a Jupyter notebook and a boardroom recommendation. I'm also curious about 
         <span class="highlight-text">AI product roles</span> where technical literacy and business 
-        judgment converge.
+        judgement converge.
         </p>
         </div>
         """, unsafe_allow_html=True)
@@ -136,7 +136,7 @@ def render():
         st.markdown("""
         <div class="card">
             <div style="font-size:13px; color:#c9d1d9; line-height:1.9;">
-                <div style="margin-bottom:8px;">🔍 Open to DS, DA, BA & Consultant roles in Germany</div>
+                <div style="margin-bottom:8px;">🔍 Open to Data Science, Data Analyst, Business Analyst & Data Consultant roles in Germany</div>
                 <div style="margin-bottom:8px;">🤖 Curious about AI Product Management</div>
                 <div style="margin-bottom:8px;">🇩🇪 Learning German (B1 level)</div>
                 <div>📝 Building in public on LinkedIn</div>
@@ -150,7 +150,7 @@ def render():
             "Data Analyst",
             "Business Analyst",
             "Data Consultant",
-            "AI Product (curious)",
+            "AI Product Management",
         ]
         roles_html = "".join(
             f'<div style="font-size:12px;color:#79c0ff;padding:5px 0;border-bottom:1px solid #21262d;">'
