@@ -50,6 +50,30 @@ PROJECTS = [
         "github_url": "https://github.com/utkarsh26rai/skywatch-detection",
         "highlight": "Dual-model benchmark: YOLOv8n vs YOLOv8s with explicit failure mode analysis",
     },
+    {
+        "title": "A/B Testing — From Power Analysis to Production",
+        "status": "live",
+        "period": "June 2026",
+        "description": (
+            "End-to-end A/B testing framework built from statistical first principles. "
+            "Covers power analysis (baseline 10%, MDE 2%, alpha 0.05, power 0.80 → 3,835 users/group), "
+            "Type I/II error simulation, proportions z-test on real Kaggle e-commerce data, "
+            "and a peeking problem demonstration — showing false positive rate climbs from 5.1% to 14.7% "
+            "with 5 interim checks. Includes 1,000-experiment Monte Carlo verification of empirical power (0.777 vs theoretical 0.800). "
+            "Built as an interview-ready reference with full statistical reasoning and business framing throughout."
+        ),
+        "tags": ["statsmodels", "scipy", "numpy", "pandas", "Streamlit", "Plotly", "Power Analysis", "Hypothesis Testing"],
+        "tag_type": "green",
+        "metrics": [
+            ("N/group", "3,835"),
+            ("Peeking FPR", "14.7%"),
+            ("Sim. Power", "0.777"),
+            ("Experiments", "1,000"),
+        ],
+        "live_url": "https://ab-testing-project0.streamlit.app/",
+        "github_url": "https://github.com/UtkarshRai-ds/ab-testing-project",
+        "highlight": "Peeking inflates false positive rate from 5.1% to 14.7% — proven empirically with 1,000 simulations",
+    },
 ]
 
 PUBLICATIONS = [
@@ -77,6 +101,7 @@ STATUS_BADGE = {
 TAG_STYLE = {
     "blue": "background:#1f2d3d;color:#79c0ff;border:1px solid #1f6feb;",
     "orange": "background:#2d1f0e;color:#ffa657;border:1px solid #9e6a03;",
+    "green": "background:#0d2d1f;color:#3fb950;border:1px solid #238636;",
 }
 
 
