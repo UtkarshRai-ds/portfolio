@@ -3,6 +3,55 @@ import streamlit as st
 
 PROJECTS = [
     {
+        "title": "A/B Testing — From Power Analysis to Production",
+        "status": "live",
+        "period": "June 2026",
+        "description": (
+            "End-to-end A/B testing framework built from statistical first principles. "
+            "Covers power analysis (baseline 10%, MDE 2%, alpha 0.05, power 0.80 → 3,835 users/group), "
+            "Type I/II error simulation, proportions z-test on real Kaggle e-commerce data, "
+            "and a peeking problem demonstration — showing false positive rate climbs from 5.1% to 14.7% "
+            "with 5 interim checks. Includes 1,000-experiment Monte Carlo verification of empirical power (0.777 vs theoretical 0.800). "
+            "Built as an interview-ready reference with full statistical reasoning and business framing throughout."
+        ),
+        "tags": ["statsmodels", "scipy", "numpy", "pandas", "Streamlit", "Plotly", "Power Analysis", "Hypothesis Testing"],
+        "tag_type": "green",
+        "metrics": [
+            ("N/group", "3,835"),
+            ("Peeking FPR", "14.7%"),
+            ("Sim. Power", "0.777"),
+            ("Experiments", "1,000"),
+        ],
+        "live_url": "https://ab-testing-project0.streamlit.app/",
+        "github_url": "https://github.com/UtkarshRai-ds/ab-testing-project",
+        "highlight": "Peeking inflates false positive rate from 5.1% to 14.7% — proven empirically with 1,000 simulations",
+    },
+    {
+        "title": "German Electricity Demand Forecasting",
+        "status": "live",
+        "period": "June 2026",
+        "description": (
+            "Day-ahead (24h) hourly forecasting of German national grid load using SMARD.de and Open-Meteo data "
+            "(2020–2026). Engineered lag, rolling, calendar, and temperature features under a strict no-leakage rule, "
+            "and benchmarked six models — Seasonal-Naive, SARIMA, Prophet, LightGBM, XGBoost, and CatBoost. "
+            "CatBoost won at 2.83% MAPE, beating the grid operator's own forecast (4.40% on the identical hold-out) "
+            "by ~36%. A self-conducted leakage audit caught rolling/temperature features peeking at the target; "
+            "shifting them by the 24h horizon raised the honest MAPE from 2.24% to 2.83% — still beating the benchmark, "
+            "but now defensible. Deployed as a Streamlit dashboard reading pre-exported artifacts for fast loads."
+        ),
+        "tags": ["CatBoost", "XGBoost", "LightGBM", "Prophet", "SARIMA", "statsmodels", "Streamlit", "Plotly", "pandas"],
+        "tag_type": "purple",
+        "metrics": [
+            ("MAPE", "2.83%"),
+            ("TSO Benchmark", "4.40%"),
+            ("Improvement", "~36%"),
+            ("Models", "6"),
+        ],
+        "live_url": "https://german-electricity-demand-forecasting.streamlit.app/",
+        "github_url": "https://github.com/UtkarshRai-ds/german-electricity-demand-forecasting",
+        "highlight": "Beats the grid operator's forecast by ~36% — with a self-audited data leakage fix documented in full",
+    },
+    {
         "title": "Telco Customer Churn Prediction",
         "status": "live",
         "period": "May 2026",
@@ -50,32 +99,7 @@ PROJECTS = [
         "github_url": "https://github.com/utkarsh26rai/skywatch-detection",
         "highlight": "Dual-model benchmark: YOLOv8n vs YOLOv8s with explicit failure mode analysis",
     },
-    {
-        "title": "A/B Testing — From Power Analysis to Production",
-        "status": "live",
-        "period": "June 2026",
-        "description": (
-            "End-to-end A/B testing framework built from statistical first principles. "
-            "Covers power analysis (baseline 10%, MDE 2%, alpha 0.05, power 0.80 → 3,835 users/group), "
-            "Type I/II error simulation, proportions z-test on real Kaggle e-commerce data, "
-            "and a peeking problem demonstration — showing false positive rate climbs from 5.1% to 14.7% "
-            "with 5 interim checks. Includes 1,000-experiment Monte Carlo verification of empirical power (0.777 vs theoretical 0.800). "
-            "Built as an interview-ready reference with full statistical reasoning and business framing throughout."
-        ),
-        "tags": ["statsmodels", "scipy", "numpy", "pandas", "Streamlit", "Plotly", "Power Analysis", "Hypothesis Testing"],
-        "tag_type": "green",
-        "metrics": [
-            ("N/group", "3,835"),
-            ("Peeking FPR", "14.7%"),
-            ("Sim. Power", "0.777"),
-            ("Experiments", "1,000"),
-        ],
-        "live_url": "https://ab-testing-project0.streamlit.app/",
-        "github_url": "https://github.com/UtkarshRai-ds/ab-testing-project",
-        "highlight": "Peeking inflates false positive rate from 5.1% to 14.7% — proven empirically with 1,000 simulations",
-    },
 ]
-
 PUBLICATIONS = [
     {
         "type": "Conference Paper",
@@ -102,6 +126,7 @@ TAG_STYLE = {
     "blue": "background:#1f2d3d;color:#79c0ff;border:1px solid #1f6feb;",
     "orange": "background:#2d1f0e;color:#ffa657;border:1px solid #9e6a03;",
     "green": "background:#0d2d1f;color:#3fb950;border:1px solid #238636;",
+    "purple": "background:#2d1a2d;color:#d2a8ff;border:1px solid #8957e5;",
 }
 
 
