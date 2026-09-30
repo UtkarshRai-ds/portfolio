@@ -96,7 +96,7 @@ PROJECTS = [
             ("Tests", "40"),
         ],
         "live_url": "https://huggingface.co/spaces/Utkarsh-DS/Skywatch-Detection",
-        "github_url": "https://github.com/utkarsh26rai/skywatch-detection",
+        "github_url": "https://github.com/UtkarshRai-ds/skywatch-detection",
         "highlight": "Dual-model benchmark: YOLOv8n vs YOLOv8s with explicit failure mode analysis",
     },
 ]
@@ -135,7 +135,8 @@ def render():
     st.markdown("# Projects")
     st.markdown(
         '<p style="font-size:15px;color:#8b949e;margin-top:-8px;margin-bottom:24px;">'
-        "End-to-end ML systems and computer vision research.</p>",
+        "Forecasting, experimentation, predictive modelling, and computer vision — "
+        "each shipped as a deployed app with the reasoning documented.</p>",
         unsafe_allow_html=True,
     )
 
