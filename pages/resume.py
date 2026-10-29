@@ -33,7 +33,7 @@ def render():
         {
             "role": "Data Science Freelancer",
             "company": "Self Employed",
-            "period": "Sep 2024 – Oct 2025",
+            "period": "Sep 2024 – Sep 2026",
             "location": "Berlin, Germany",
             "bullets": [
                 "Loaded, preprocessed, and augmented image datasets using TensorFlow (Sequential API); designed and trained CNN-based classifiers achieving high accuracy on client-specific use cases.",
