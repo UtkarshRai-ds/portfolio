@@ -4,7 +4,7 @@
 
 A personal portfolio built with Streamlit, showcasing four deployed end-to-end projects spanning forecasting, experimentation, predictive modelling, and computer vision. Dark GitHub-inspired design with a working contact form.
 
-Every project below is live, linked to its own repo, and documented with the reasoning behind the modelling decisions — including the ones that went wrong.
+Every project below is live, linked to its own repo, and documented with the reasoning behind the modelling decisions.
 
 ---
 
