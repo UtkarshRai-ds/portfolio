@@ -2,7 +2,7 @@
 
 > Live at **[utkarshrai-ds-portfolio.streamlit.app](https://utkarshrai-ds-portfolio.streamlit.app)**
 
-A personal portfolio built with Streamlit, showcasing four deployed end-to-end projects spanning forecasting, experimentation, predictive modelling, and computer vision. Dark GitHub-inspired design with a working contact form.
+A personal portfolio built with Streamlit, showcasing four deployed end-to-end projects spanning forecasting, experimentation, predictive modelling, and computer vision.
 
 Every project below is live, linked to its own repo, and documented with the reasoning behind the modelling decisions.
 
