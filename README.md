@@ -37,14 +37,14 @@ Every project below is live, linked to its own repo, and documented with the rea
 
 ### Telco Customer Churn Prediction
 - IBM Telco dataset · 7,043 rows · 36 engineered features
-- Logistic Regression tuned via Optuna (30 trials, 5-fold CV) — AUC 0.838, Recall 0.80 (31pp lift over baseline)
+- Logistic Regression tuned via Optuna (30 trials, 5-fold CV), AUC 0.838, Recall 0.80 (31pp lift over baseline)
 - Risk segmentation: targeting the top 51% risk tier captures 87% of churners
 - Docker · GitHub Actions CI/CD · MLflow · 34 pytest tests
 - 🔗 [Live App](https://telco-churn-utkarsh.streamlit.app) · [GitHub](https://github.com/UtkarshRai-ds/telco-churn-prediction)
 
 ### SkyWatch — Satellite Object Detection
 - NWPU VHR-10 dataset · 800 images · 10 classes · 4,811 annotations
-- YOLOv8n vs YOLOv8s dual benchmark under identical conditions — mAP50 0.697, Recall 0.690
+- YOLOv8n vs YOLOv8s dual benchmark under identical conditions where mAP50 0.697, Recall 0.690
 - Per-class failure analysis surfaced in the dashboard rather than hidden
 - Docker · GitHub Actions · Weights & Biases · 40 pytest tests
 - 🔗 [Live App](https://huggingface.co/spaces/Utkarsh-DS/Skywatch-Detection) · [GitHub](https://github.com/UtkarshRai-ds/skywatch-detection)
