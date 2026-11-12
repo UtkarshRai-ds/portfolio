@@ -12,7 +12,7 @@ Every project below is live, linked to its own repo, and documented with the rea
 
 | Page | Description |
 |------|-------------|
-| **About Me** | Bio, domain coverage, education — MSc Data Analytics + BBA/MBA |
+| **About Me** | Bio, domain coverage, education — MSc Data Analytics + BBA/MBA (Business Analytics & Marketing) |
 | **Projects** | Four deployed projects + two academic publications |
 | **Skills** | Category-based tech stack — ML, Data Engineering, Analytics, Business |
 | **Resume** | Experience timeline, education, core competencies + downloadable PDF CV |
